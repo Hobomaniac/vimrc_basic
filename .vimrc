@@ -65,7 +65,9 @@ set wildmode=list:longest
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*xlsx
 
-
+" Set splitting to the right and below
+set splitbelow
+set splitright
 
 " PLUGINS ----------------------------------------------- {{{
 
@@ -94,8 +96,8 @@ nnoremap O O<esc>
 nnoremap <leader>/ :noh<cr>
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
-nnoremap <c-k> <c-w>h
-nnoremap <c-k> <c-w>l
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 noremap <c-up> <c-w>+
 noremap <c-down> <c-w>-
