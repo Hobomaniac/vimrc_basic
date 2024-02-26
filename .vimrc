@@ -2,7 +2,7 @@
 set nocompatible
 
 " backspace to previous paragraph and various others
-set backspace=eol,start
+set backspace=indent,eol,start
 
 " Enable type file detection. vim will be able to try to detected the type of file in use.
 filetype on
@@ -11,23 +11,26 @@ filetype on
 filetype plugin on
 
 " Load an indent file for the detected file type
-filetype indent on
+" filetype indent on
 
 " Turn syntax highlighting on.
 syntax on
 
 " Turn on relative numbers but show current number line
 set rnu
-set number
 
-" Set shift width to 4 spaces.
-set shiftwidth=4
+" Set shift width to 4 spaces (it uses tabstop if set to 0).
+set shiftwidth=0
 
 " Set tab width to 4 columns.
 set tabstop=4
 
-" Use space characters instead of tabs.
+" Backspace on tabs (maybe)
+set softtabstop=-1
 set expandtab
+
+" Use space characters instead of tabs.
+" set expandtab
 
 " do not save backup files.
 set nobackup
@@ -77,6 +80,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdtree'
     Plug 'embark-theme/vim', {'as': 'embark', 'branch': 'main' }
     Plug 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' } 
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -89,6 +94,11 @@ colorscheme nightfly
 let mapleader = ","
 
 inoremap <leader><leader> <Esc>
+
+noremap <leader>t :Files<cr>
+noremap <leader>f :bnext<cr>
+noremap <leader>s :bprev<cr>
+noremap <leader>q :bdelete<cr>
 
 nnoremap <space> :
 nnoremap o o<esc>
