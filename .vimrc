@@ -82,6 +82,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' } 
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -113,6 +114,9 @@ noremap <c-up> <c-w>+
 noremap <c-down> <c-w>-
 noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
+
+" imap ( ()<left>
+" imap { {}<left>
 
 nnoremap <F3> :NERDTree<cr>
 let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
